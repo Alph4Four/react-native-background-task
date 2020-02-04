@@ -23,11 +23,15 @@ public class HeadlessTaskService extends HeadlessJsTaskService {
         int timeout = extras.getInt("timeout");
 
         Log.d(TAG, String.format("Returning HeadlessJsTaskConfig, timeout=%s ms", timeout));
-        return new HeadlessJsTaskConfig(
-                // The the task was registered with in JS - must match
-                "BackgroundTask",
-                data,
-                TimeUnit.SECONDS.toMillis(timeout)
-        );
+        if(!isAppOnForeground(this)) {
+            return new HeadlessJsTaskConfig(
+                    // The the task was registered with in JS - must match
+                    "BackgroundTask",
+                    data,
+                    TimeUnit.SECONDS.toMillis(timeout)
+            );
+        } else {
+            return null;   
+        }
     }
 }
