@@ -10,6 +10,7 @@ import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.jstasks.HeadlessJsTaskConfig;
 import com.facebook.react.HeadlessJsTaskService;
 import java.util.concurrent.TimeUnit;
+import java.util.List;
 
 public class HeadlessTaskService extends HeadlessJsTaskService {
     private static final String TAG = "BackgroundTask";
