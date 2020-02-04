@@ -20,7 +20,6 @@ public class RNJob extends Job {
     private static final String TAG = "BackgroundTask";
 
     @Override
-    @NonNull
     protected Result onRunJob(Params params) {
         Log.d(TAG, "Job is running");
         PersistableBundleCompat requestExtras = params.getExtras();
