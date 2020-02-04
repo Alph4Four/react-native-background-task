@@ -16,7 +16,7 @@ public class HeadlessTaskService extends HeadlessJsTaskService {
     private static final String TAG = "BackgroundTask";
 
     @Override
-    protected @Nullable HeadlessJsTaskConfig getTaskConfig(Intent intent) {
+    protected HeadlessJsTaskConfig getTaskConfig(Intent intent) {
         Bundle extras = intent.getExtras();
         // If extras have been passed to the intent, pass them on into the JS as taskData
         // which can be accessed as the first param.
